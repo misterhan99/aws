@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    config:
+      enabled: true
+#      uri: http://localhost:8888/simple-config-server
+      discovery:
+        enabled: true
+        service-id: simple-config-server
+
+eureka:
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka/eureka
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: ${server.servlet.contextPath}/actuator/info
+
+server:
+  port: 9002
+  servlet:
+    contextPath: /service-consumer
