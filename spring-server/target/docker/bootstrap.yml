@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: simple-config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/misterhan99/mygit
+#          search-paths: config
+#      label: master
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config
+
+eureka:
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka/eureka
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: ${server.servlet.contextPath}/actuator/info
+    metadataMap:
+      configPath: ${server.servlet.contextPath}
