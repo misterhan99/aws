@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: peer1
+
+server:
+  port: 8761
+  servlet:
+    contextPath: /simple-eureka-peer1
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka-peer2/eureka
+  instance:
+    hostname: peer1
