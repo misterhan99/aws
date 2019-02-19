@@ -13,7 +13,7 @@ eureka:
     region: default
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka/eureka
+      defaultZone: http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka-peer1/eureka,http://alb111-911948637.ap-southeast-1.elb.amazonaws.com/simple-eureka-peer2/eureka
     instance:
   instance:
     preferIpAddress: true
