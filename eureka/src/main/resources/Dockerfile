@@ -12,4 +12,4 @@ ADD eureka-0.0.1-SNAPSHOT.jar eureka.jar
 EXPOSE 8761
 
 # 配置容器启动后执行的命令
-ENTRYPOINT ["java","-jar","/eureka.jar"]
+ENTRYPOINT ["java","-jar","/eureka.jar","--spring.profiles.active=peer2"]
